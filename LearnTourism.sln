@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{20244E97-F1C9-A5F7-B901-48B39A9EC318}") = "LearnTourism", "Assembly-CSharp.csproj", "{0C87DBBE-5A6E-0A1B-0DB7-EB25DFC88A40}"
+EndProject
+Project("{20244E97-F1C9-A5F7-B901-48B39A9EC318}") = "LearnTourism", "Assembly-CSharp-Editor.csproj", "{C77346FC-E02C-DC30-3210-3C99DED8F211}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C87DBBE-5A6E-0A1B-0DB7-EB25DFC88A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C87DBBE-5A6E-0A1B-0DB7-EB25DFC88A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C87DBBE-5A6E-0A1B-0DB7-EB25DFC88A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C87DBBE-5A6E-0A1B-0DB7-EB25DFC88A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C77346FC-E02C-DC30-3210-3C99DED8F211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77346FC-E02C-DC30-3210-3C99DED8F211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77346FC-E02C-DC30-3210-3C99DED8F211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77346FC-E02C-DC30-3210-3C99DED8F211}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
