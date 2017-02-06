@@ -20,13 +20,13 @@ public class TimeController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (isGripp) {
+		//if (isGripp) {
 			if (TrackedController.controllerState.rAxis0.x != 0 && TrackedController.controllerState.rAxis0.y != 0) {
 				Debug.Log ("TrackedController.controllerState.rAxis0.x: " + TrackedController.controllerState.rAxis0.x.ToString ());
 				float angle = 90 + TrackedController.controllerState.rAxis0.x * 120;
 				Manager.Instance.currentLight.transform.rotation = Quaternion.AngleAxis (angle, Vector3.right);
 			}
-		}	
+		//}	
 	}
 
 	void Gripped (object sender, ClickedEventArgs e)

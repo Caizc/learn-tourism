@@ -28,8 +28,9 @@ public class Manager : MonoBehaviour
 		} else if (currentCheck != touristCheck) {
 			currentCheck.Reset ();
 			currentCheck = touristCheck;
-			currentLight = GameObject.Find ("Directional Light").GetComponent<Light> ();
 		}
+
+		currentLight = GameObject.Find ("Directional Light").GetComponent<Light> ();
 	}
 
 

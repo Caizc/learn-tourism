@@ -8,7 +8,7 @@ public class Tourism_LaserPointer : MonoBehaviour
 	public Color color;
 	public float thickness = 0.002f;
 	public GameObject holder;
-	public GameObject pointer;
+	//public GameObject pointer;
 	bool isActive = false;
 	public bool addRigidBody = false;
 	public Transform reference;
@@ -20,9 +20,9 @@ public class Tourism_LaserPointer : MonoBehaviour
 
 	Transform previousContact = null;
 
-	Material newMaterial = null;
+	//Material newMaterial = null;
 
-	//Parabola parabola;
+	Parabola parabola;
 
 	// Use this for initialization
 	void Start ()
@@ -32,28 +32,28 @@ public class Tourism_LaserPointer : MonoBehaviour
 		holder.transform.localPosition = Vector3.zero;
 		holder.transform.localRotation = Quaternion.identity;
 
-		pointer = GameObject.CreatePrimitive (PrimitiveType.Cube);
-		pointer.transform.parent = holder.transform;
-		pointer.transform.localScale = new Vector3 (thickness, thickness, 100f);
-		pointer.transform.localPosition = new Vector3 (0f, 0f, 50f);
-		pointer.transform.localRotation = Quaternion.identity;
-		BoxCollider collider = pointer.GetComponent<BoxCollider> ();
-		if (addRigidBody) {
-			if (collider) {
-				collider.isTrigger = true;
-			}
-			Rigidbody rigidBody = pointer.AddComponent<Rigidbody> ();
-			rigidBody.isKinematic = true;
-		} else {
-			if (collider) {
-				Object.Destroy (collider);
-			}
-		}
-		newMaterial = new Material (Shader.Find ("Unlit/Color"));
-		newMaterial.SetColor ("_Color", color);
-		pointer.GetComponent<MeshRenderer> ().material = newMaterial;
+		//pointer = GameObject.CreatePrimitive (PrimitiveType.Cube);
+		//pointer.transform.parent = holder.transform;
+		//pointer.transform.localScale = new Vector3 (thickness, thickness, 100f);
+		//pointer.transform.localPosition = new Vector3 (0f, 0f, 50f);
+		//pointer.transform.localRotation = Quaternion.identity;
+		//BoxCollider collider = pointer.GetComponent<BoxCollider> ();
+		//if (addRigidBody) {
+		//	if (collider) {
+		//		collider.isTrigger = true;
+		//	}
+		//	Rigidbody rigidBody = pointer.AddComponent<Rigidbody> ();
+		//	rigidBody.isKinematic = true;
+		//} else {
+		//	if (collider) {
+		//		Object.Destroy (collider);
+		//	}
+		//}
+		//newMaterial = new Material (Shader.Find ("Unlit/Color"));
+		//newMaterial.SetColor ("_Color", color);
+		//pointer.GetComponent<MeshRenderer> ().material = newMaterial;
 
-		//parabola = GetComponent<Parabola> ();
+		parabola = GetComponent<Parabola> ();
 	}
 
 	public virtual void OnPointerIn (PointerEventArgs e)
@@ -110,13 +110,13 @@ public class Tourism_LaserPointer : MonoBehaviour
 
 		if (!bHit) {
 			previousContact = null;
-			newMaterial.SetColor ("_Color", Color.black);
+			//newMaterial.SetColor ("_Color", Color.red);
 
-			//parabola.EndPosition = Vector3.zero;
+			parabola.EndPosition = Vector3.zero;
 		} else {
-			newMaterial.SetColor ("_Color", Color.red);
+			//newMaterial.SetColor ("_Color", Color.green);
 
-			//parabola.EndPosition = hit.point;
+			parabola.EndPosition = hit.point;
 		}
 
 		if (bHit && hit.distance < 100f) {
@@ -127,11 +127,11 @@ public class Tourism_LaserPointer : MonoBehaviour
 			HitPoint = hit.point;
 		}
 
-		if (controller != null && controller.triggerPressed) {
-			pointer.transform.localScale = new Vector3 (thickness * 5f, thickness * 5f, dist);
-		} else {
-			pointer.transform.localScale = new Vector3 (thickness, thickness, dist);
-		}
-		pointer.transform.localPosition = new Vector3 (0f, 0f, dist / 2f);
+		//if (controller != null && controller.triggerPressed) {
+		//	pointer.transform.localScale = new Vector3 (thickness * 5f, thickness * 5f, dist);
+		//} else {
+		//	pointer.transform.localScale = new Vector3 (thickness, thickness, dist);
+		//}
+		//pointer.transform.localPosition = new Vector3 (0f, 0f, dist / 2f);
 	}
 }

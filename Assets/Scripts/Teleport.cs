@@ -28,16 +28,19 @@ public class Teleport : MonoBehaviour
 
 	void LeftPointerIn (object sender, PointerEventArgs e)
 	{
+		// 当有物体指向时设置全局变量标识
 		currentTransform = e.target;
 	}
 
 	void LeftPointerOut (object sender, PointerEventArgs e)
 	{
+		// 取消指向事件时将标识设置为空
 		currentTransform = null;
 	}
 
 	void TriggerClicked (object sender, ClickedEventArgs e)
 	{
+		// 如果有指向物体则调用传送至目标位置
 		if (currentTransform != null) {
 			TeleportByPosition (slLeft.HitPoint);
 		}
@@ -46,7 +49,7 @@ public class Teleport : MonoBehaviour
 	private void TeleportByPosition (Vector3 targetPosition)
 	{
 
-		Debug.Log ("targetPosition:" + targetPosition.x + "_" + targetPosition.y + "_" + targetPosition.z);
+		//Debug.Log ("targetPosition:" + targetPosition.x + "_" + targetPosition.y + "_" + targetPosition.z);
 
 		this.gameObject.transform.position = new Vector3 (targetPosition.x - GoLeft.transform.localPosition.x, targetPosition.y, targetPosition.z - GoLeft.transform.localPosition.z);
 
